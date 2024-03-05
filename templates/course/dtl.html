@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DTL</title>
+</head>
+<body>
+    <h1 align="center">Django Templates Language</h1>
+    <hr/>
+    <h1>Name : {{ name| capfirst }}</h1>
+    <hr/>
+    <p>Message : {{ message| truncatewords:15 }}</p>
+    <hr/>
+    <h3>Email : {{ email| truncatechars:6}}</h3>
+    <hr/>
+    <h2>City : {{ city }}</h2>
+</body>
+</html>
