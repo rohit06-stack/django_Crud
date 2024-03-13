@@ -25,3 +25,14 @@ def showRecords(request):
         'records': records
     }
     return render(request,'fees/feesRecord.html',context)
+
+def FeesEdit(request,id):
+    record = Fees.objects.get(id=id)
+    
+    return render(request,'fees/edit.html',{'record':record})
+
+
+def Feesdelete(request,id):
+    records =Fees.objects.get(id=id)
+    records.delete()
+    return redirect('/fees/feesRecord')

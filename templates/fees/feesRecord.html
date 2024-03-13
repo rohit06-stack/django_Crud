@@ -23,10 +23,10 @@
               <td>{{ record.duration }}</td>
               <td>{{ record.fees}}</td>
               <td>
-                <a href="#">Edit</a>
+                <a href="{% url 'FeesEdit' record.id %}">Edit</a>
               </td>
               <td>
-                <a href="{% url 'delete' record.id %}" class="btn btn-outline-danger">Delete</a>
+                <a href="{% url 'Feesdelete' record.id %}" class="btn btn-outline-danger">Delete</a>
               </td>
             </tr>
           {% endfor %}
