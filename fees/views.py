@@ -1,6 +1,5 @@
 from django.shortcuts import render,redirect
 from .models import Fees
-
 # Create your views here.
 def fees(request):
     if request.method =="POST":
@@ -28,9 +27,15 @@ def showRecords(request):
 
 def FeesEdit(request,id):
     record = Fees.objects.get(id=id)
-    
-    return render(request,'fees/edit.html',{'record':record})
-
+    if request.method == 'POST':
+        record.name = request.POST['nm']
+        record.course = request.POST['course']
+        record.duration = request.POST['duration']
+        record.fees = request.POST['fees']
+        record.save()
+        return redirect('/fees/feesRecord')
+    else:
+        return render(request,'fees/edit.html',{'record':record})
 
 def Feesdelete(request,id):
     records =Fees.objects.get(id=id)
